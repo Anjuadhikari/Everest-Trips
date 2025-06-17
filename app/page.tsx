@@ -6,6 +6,7 @@ import { Info } from "lucide-react";
 import InfoSection from "@/component/info-section";
 import Information from "@/component/information";
 import ContactPic from "@/component/contact-pic";
+import Banner from "@/component/banner";
 
 export default function Page() {
   return (
@@ -14,7 +15,8 @@ export default function Page() {
       <InfoSection />
       <Information />
       <Card />
-      <ContactPic/>
+      <Banner/>
+     
 
     </>
   );
