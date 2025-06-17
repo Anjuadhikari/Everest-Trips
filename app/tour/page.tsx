@@ -1,17 +1,8 @@
 "use client";
+import { Label } from "@radix-ui/react-label";
+import { RadioGroup, RadioGroupItem } from "@radix-ui/react-radio-group";
 import { ChevronDown, Search } from "lucide-react";
-import { useState, useRef } from "react";
-
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { useState } from "react";
 
 export default function TourPage() {
   const details = [
@@ -70,39 +61,39 @@ export default function TourPage() {
   const [showDifficulty, setShowDifficulty] = useState(false);
 
   return (
-    <>
-      <div className="min-h-screen w-full mx-auto flex justify-between items-start border border-gray-200 gap-6 px-6">
+    <main className="min-h-screen w-full px-6 py-10 max-w-7xl mx-auto">
+      <div className="flex justify-between gap-6">
         {/* Filter Section */}
-        <div className="w-[22%] p-6 shadow-md border border-gray-200 rounded-4xl mt-10 mb-20">
+        <div className="w-[22%] p-6 shadow-md border border-gray-200 rounded-3xl">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold mb-4">Sort & Filter</h2>
-            <span className="text-blue-500 cursor-pointer underline">Clear All</span>
+            <h2 className="text-xl font-semibold">Sort & Filter</h2>
+            <span className="text-blue-500 cursor-pointer underline">
+              Clear All
+            </span>
           </div>
 
           {/* Duration */}
           <hr className="border-t border-gray-300 my-4" />
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold mb-4">Duration</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-semibold">Duration</h2>
             <ChevronDown
               className="w-4 h-4 text-gray-500 cursor-pointer"
               onClick={() => setShowRange(!showRange)}
             />
           </div>
           {showRange && (
-            <div className="mb-6">
-              <input
-                type="range"
-                min="1"
-                max="100"
-                className="w-full h-2 bg-blue-500 rounded-lg cursor-pointer"
-              />
-            </div>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              className="w-full h-2 bg-blue-500 rounded-lg cursor-pointer mb-4"
+            />
           )}
 
           {/* Dates */}
           <hr className="border-t border-gray-300 my-4" />
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold mb-4">Dates</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-semibold">Dates</h2>
             <ChevronDown
               className="w-4 h-4 text-gray-500 cursor-pointer"
               onClick={() => setShowDate(!showDate)}
@@ -121,28 +112,26 @@ export default function TourPage() {
 
           {/* Price */}
           <hr className="border-t border-gray-300 my-4" />
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold mb-4">Price</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-semibold">Price</h2>
             <ChevronDown
               className="w-4 h-4 text-gray-500 cursor-pointer"
               onClick={() => setShowPrice(!showPrice)}
             />
           </div>
           {showPrice && (
-            <div className="mb-6">
-              <input
-                type="range"
-                min="1"
-                max="100"
-                className="w-full h-2 bg-blue-500 rounded-lg cursor-pointer"
-              />
-            </div>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              className="w-full h-2 bg-blue-500 rounded-lg cursor-pointer mb-4"
+            />
           )}
 
           {/* Destination */}
           <hr className="border-t border-gray-300 my-4" />
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold mb-4">Destination</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-semibold">Destination</h2>
             <ChevronDown
               className="w-4 h-4 text-gray-500 cursor-pointer"
               onClick={() => setShowDestination(!showDestination)}
@@ -150,19 +139,21 @@ export default function TourPage() {
           </div>
           {showDestination && (
             <RadioGroup defaultValue="option-one" className="text-blue-500">
-              {["Kathmandu", "Pokhara", "Chitwan", "Lumbini"].map((place, i) => (
-                <div key={place} className="flex items-center space-x-2 mb-2">
-                  <RadioGroupItem value={`dest-${i}`} id={`dest-${i}`} />
-                  <Label htmlFor={`dest-${i}`}>{place}</Label>
-                </div>
-              ))}
+              {["Kathmandu", "Pokhara", "Chitwan", "Lumbini"].map(
+                (place, i) => (
+                  <div key={place} className="flex items-center space-x-2 mb-2">
+                    <RadioGroupItem value={`dest-${i}`} id={`dest-${i}`} />
+                    <Label htmlFor={`dest-${i}`}>{place}</Label>
+                  </div>
+                )
+              )}
             </RadioGroup>
           )}
 
           {/* Activities */}
           <hr className="border-t border-gray-300 my-4" />
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold mb-4">Activities</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-semibold">Activities</h2>
             <ChevronDown
               className="w-4 h-4 text-gray-500 cursor-pointer"
               onClick={() => setShowActivities(!showActivities)}
@@ -170,7 +161,7 @@ export default function TourPage() {
           </div>
           {showActivities && (
             <RadioGroup defaultValue="option-one" className="text-blue-500">
-              {["Kathmandu", "Pokhara", "Mustang"].map((act, i) => (
+              {["Trekking", "Adventure", "Wildlife"].map((act, i) => (
                 <div key={act} className="flex items-center space-x-2 mb-2">
                   <RadioGroupItem value={`act-${i}`} id={`act-${i}`} />
                   <Label htmlFor={`act-${i}`}>{act}</Label>
@@ -181,8 +172,8 @@ export default function TourPage() {
 
           {/* Difficulty */}
           <hr className="border-t border-gray-300 my-4" />
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold mb-4">Difficulty Level</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-semibold">Difficulty Level</h2>
             <ChevronDown
               className="w-4 h-4 text-gray-500 cursor-pointer"
               onClick={() => setShowDifficulty(!showDifficulty)}
@@ -200,56 +191,77 @@ export default function TourPage() {
           )}
         </div>
 
-        {/* Tour Carousel Section */}
-        <div className="w-[75%] p-6 shadow-md border border-gray-200 rounded-4xl mt-10 mb-20">
+        {/* Tour List Placeholder (for search results) */}
+        <div className="w-[75%]">
           <div className="flex justify-end mb-4">
             <button className="p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
               <Search className="h-5 w-5" />
             </button>
           </div>
-
-          <Carousel className="w-full mx-auto px-4">
-            <CarouselContent>
-              {details.map((detail) => (
-                <CarouselItem
-                  key={detail.id}
-                  className="md:basis-1/2 lg:basis-1/3 px-2"
-                >
-                  <Card>
-                    <CardContent className="p-0">
-                      <div
-                        className={`shadow-lg rounded-xl overflow-hidden p-4 hover:shadow-xl transition duration-300 border-2 ${detail.color} border-solid h-[450px]`}
-                      >
-                        <img
-                          src={detail.image}
-                          alt={detail.title}
-                          width={500}
-                          height={300}
-                          className="w-full h-48 object-cover rounded-md mb-4"
-                        />
-                        <div>
-                          <div className="text-gray-800 font-semibold text-lg mb-2">
-                            {detail.location}, {detail.title}{" "}
-                            <span className="text-blue-600 text-sm">+1 More</span>
-                          </div>
-                          <p className="text-gray-600 text-sm mb-4">
-                            {detail.description}
-                          </p>
-                          <button className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
-                            View More
-                          </button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
         </div>
       </div>
-    </>
+
+      {/* Popular Tours */}
+      <section className="my-12">
+        <h2 className="text-3xl font-bold mb-6 text-blue-700">Popular Tours</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {details.slice(0, 3).map((tour) => (
+            <div
+              key={tour.id}
+              className={`rounded-xl shadow-md overflow-hidden transition hover:shadow-lg border border-gray-200 ${tour.color}`}
+            >
+              <img
+                src={tour.image}
+                alt={tour.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-1">{tour.title}</h3>
+                <p className="text-gray-600 text-sm">{tour.location}</p>
+                <p className="mt-2 text-gray-700 text-sm">{tour.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="my-12 bg-gray-100 p-8 rounded-2xl shadow-inner">
+        <h2 className="text-3xl font-bold mb-8 text-center text-blue-700">
+          What Our Travelers Say
+        </h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              name: "Suman Thapa",
+              review:
+                "The Annapurna Base Camp trek was breathtaking! The team made everything smooth and enjoyable.",
+              location: "Kathmandu",
+            },
+            {
+              name: "Elina Gurung",
+              review:
+                "I loved my Langtang trip. Great support and amazing guides!",
+              location: "Pokhara",
+            },
+            {
+              name: "Rahul Lama",
+              review:
+                "Best trekking experience ever. Highly recommend the Mustang trail!",
+              location: "Chitwan",
+            },
+          ].map((testi, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-xl shadow-md border border-gray-200"
+            >
+              <p className="text-gray-700 mb-4 italic">"{testi.review}"</p>
+              <div className="font-semibold text-blue-600">{testi.name}</div>
+              <div className="text-sm text-gray-500">{testi.location}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
