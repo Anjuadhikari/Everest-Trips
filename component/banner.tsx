@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Banner() {
   return (
     <div
-      className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-between bg-cover bg-center"
+      className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-between bg-cover bg-center mb-10"
       style={{ backgroundImage: "url('/bg-people.jpg')" }}
     >
    
@@ -27,13 +27,13 @@ export default function Banner() {
       </div>
 
     
-      <div className="relative z-10 md:pr-16 pb-10 md:pb-0">
+      <div className="relative z-10 md:pr-16 pb-10 md:pb-0 mb-10">
         <Image
           src="/guide.jpg"
           alt="Mountain Guide"
           width={500}
           height={700}
-          className="rounded-2xl shadow-2xl border-4 border-white object-cover"
+          className="rounded-2xl shadow-2xl border-4 border-white object-cover "
         />
       </div>
     </div>

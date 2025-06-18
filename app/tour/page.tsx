@@ -63,7 +63,6 @@ export default function TourPage() {
   return (
     <main className="min-h-screen w-full px-6 py-10 max-w-7xl mx-auto">
       <div className="flex justify-between gap-6">
-      
         <div className="w-[22%] p-6 shadow-md border border-gray-200 rounded-3xl">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-semibold">Sort & Filter</h2>
@@ -89,7 +88,6 @@ export default function TourPage() {
             />
           )}
 
-      
           <hr className="border-t border-gray-300 my-4" />
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold">Dates</h2>
@@ -109,7 +107,6 @@ export default function TourPage() {
             </RadioGroup>
           )}
 
-          {/* Price */}
           <hr className="border-t border-gray-300 my-4" />
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold">Price</h2>
@@ -127,7 +124,6 @@ export default function TourPage() {
             />
           )}
 
-          {/* Destination */}
           <hr className="border-t border-gray-300 my-4" />
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold">Destination</h2>
@@ -149,7 +145,6 @@ export default function TourPage() {
             </RadioGroup>
           )}
 
-          {/* Activities */}
           <hr className="border-t border-gray-300 my-4" />
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold">Activities</h2>
@@ -169,7 +164,6 @@ export default function TourPage() {
             </RadioGroup>
           )}
 
-         
           <hr className="border-t border-gray-300 my-4" />
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold">Difficulty Level</h2>
@@ -199,7 +193,6 @@ export default function TourPage() {
         </div>
       </div>
 
-      
       <section className="my-12">
         <h2 className="text-3xl font-bold mb-6 text-blue-700">Popular Tours</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -222,47 +215,50 @@ export default function TourPage() {
           ))}
         </div>
       </section>
-    <div className="my-16 max-w-5xl mx-auto px-4">
-  <h2 className="text-4xl font-extrabold text-center text-black mb-14">
-    What Our Travelers Say
-  </h2>
-  <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-12">
-    {[
-      {
-        name: "Suman Thapa",
-        review:
-          "The Annapurna Base Camp trek was breathtaking! The team made everything smooth and enjoyable.",
-        location: "Kathmandu",
-      },
-      {
-        name: "Elina Gurung",
-        review:
-          "I loved my Langtang trip. Great support and amazing guides!",
-        location: "Pokhara",
-      },
-      {
-        name: "Rahul Lama",
-        review:
-          "Best trekking experience ever. Highly recommend the Mustang trail!",
-        location: "Chitwan",
-      },
-    ].map((item, i) => (
-      <div key={i} className="flex flex-col space-y-4 border-b border-gray-300 pb-6 last:border-0">
-        <p className="text-gray-700 italic text-lg leading-relaxed">"{item.review}"</p>
-        <div className="flex items-center space-x-3">
-          
-          <div>
-            <div className="font-semibold text-indigo-700">{item.name}</div>
-            <div className="text-sm text-gray-500">{item.location}</div>
-          </div>
+      <div className="my-16 max-w-5xl mx-auto px-4">
+        <h2 className="text-4xl font-extrabold text-center text-black mb-14">
+          What Our Travelers Say
+        </h2>
+        <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-12">
+          {[
+            {
+              name: "Bandana Gurung",
+              review:
+                "The Annapurna Base Camp trek was breathtaking! The team made everything smooth and enjoyable.",
+              location: "Kathmandu",
+            },
+            {
+              name: "Anju Adhikari",
+              review:
+                "I loved my Langtang trip. Great support and amazing guides!",
+              location: "Pokhara",
+            },
+            {
+              name: "Subina Gurung",
+              review:
+                "Best trekking experience ever. Highly recommend the Mustang trail!",
+              location: "Chitwan",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col space-y-4 border-b border-gray-400 b-6 last:border-0"
+            >
+              <p className="text-gray-700 italic text-lg leading-relaxed">
+                "{item.review}"
+              </p>
+              <div className="flex items-center space-x-3">
+                <div>
+                  <div className="font-semibold text-indigo-700">
+                    {item.name}
+                  </div>
+                  <div className="text-sm text-gray-500">{item.location}</div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
-
-   
-     
     </main>
   );
 }

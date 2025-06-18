@@ -10,17 +10,17 @@ export default function ContactPage() {
       </div>
       <div>
         <p className="text-gray-500 text-lg mb-5 flex items-center justify-center">
-          Have any questions or need help? We’d love to hear from you. Fill out
-          the form below, and we’ll get back to you as soon as possible.
+          Have any questions or need help? We&apos;d love to hear from you. Fill out
+          the form below, and we&apos;ll get back to you as soon as possible.
         </p>
         <form
           action=" "
-          className="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md mb-10 p-10"
+          className="max-w-3xl mx-auto bg-gray-50  rounded-lg shadow-md mb-10 p-10"
         >
           <div className="mb">
             <label
               htmlFor="name"
-              className="block text-gray-700 mb-2 font-semibold flex items-center gap-1"
+              className=" text-gray-700 mb-2 font-semibold flex items-center gap-1"
             >
               Name
               <p className="text-red-500">*</p>
@@ -34,7 +34,7 @@ export default function ContactPage() {
             />
             <label
               htmlFor="email"
-              className="block text-gray-700 mb-2 font-semibold mt-4 flex items-center gap-1"
+              className=" text-gray-700 mb-2 font-semibold mt-4 flex items-center gap-1"
             >
               Email
               <p className="text-red-500">*</p>
@@ -48,7 +48,7 @@ export default function ContactPage() {
             />
             <label
               htmlFor="subject"
-              className="block text-gray-700 mb-2 font-semibold mt-4 flex items-center gap-1"
+              className=" text-gray-700 mb-2 font-semibold mt-4 flex items-center gap-1"
             >
               Subject
               <p className="text-red-500">*</p>
@@ -62,7 +62,7 @@ export default function ContactPage() {
             />
             <label
               htmlFor="message"
-              className="block text-gray-700 mb-2 font-semibold mt-4 flex items-center gap-1"
+              className=" text-gray-700 mb-2 font-semibold mt-4 flex items-center gap-1"
             >
               Message
               <p className="text-red-500">*</p>
