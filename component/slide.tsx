@@ -14,7 +14,6 @@ export default function Slide() {
         {
           title: "TripAdvisor",
           image: "/tripadvisior.png",
-
           rating: `⭐⭐⭐⭐ 4.5`,
         },
       ],
@@ -24,7 +23,6 @@ export default function Slide() {
         {
           title: "Google Reviews",
           image: "/google-review.png",
-
           rating: `⭐⭐⭐⭐ 4.5`,
         },
       ],
@@ -85,7 +83,7 @@ export default function Slide() {
   };
 
   const currentDetails = Details[activeSlide as keyof typeof Details];
-    const currentContent = contents[activeSlide as keyof typeof contents];
+  const currentContent = contents[activeSlide as keyof typeof contents];
   return (
     <div>
       <div className="flex justify-center items-center space-x-4 mb-6">
@@ -103,19 +101,25 @@ export default function Slide() {
           </button>
         ))}
       </div>
-      <div>
-        { currentContent.content.map((content, index) => (
+      <div className="flex justify-center mb-10">
+        {currentContent.content.map((content, index) => (
           <div
             key={index}
-            className="bg-gray-400 text-gray-800 p-6 mb-4 rounded-lg shadow-md space-x-4 space-y-7"
+            className="bg-gray-300 rounded-full shadow-xl w-[300px] flex flex-col items-center text-center space-y-2"
           >
-            <h1>{content.title}</h1>
-            <img src={content.image} alt={content.title} className="" />
-
-            <p>{content.rating}</p>
+            <img
+              src={content.image}
+              alt={content.title}
+              className="w-24 h-24 object-contain rounded-full"
+            />
+            <h2 className="text-xl font-semibold text-gray-900">
+              {content.title}
+            </h2>
+            <p className="text-yellow-500 text-lg">{content.rating}</p>
           </div>
         ))}
       </div>
+
       <div>
         {currentDetails.detail.map((detail, index) => (
           <div
