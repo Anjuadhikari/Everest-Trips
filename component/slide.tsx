@@ -85,7 +85,6 @@ export default function Slide() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
-      {/* Buttons */}
       <div className="flex justify-center items-center gap-4 mb-10">
         {Slide.map((slide, index) => (
           <button
@@ -102,7 +101,7 @@ export default function Slide() {
         ))}
       </div>
 
-      {/* Logo Card */}
+     
       <div className="flex justify-center mb-10">
         {currentContent.content.map((content, index) => (
           <div
@@ -122,7 +121,6 @@ export default function Slide() {
         ))}
       </div>
 
-      {/* Details */}
       <div className="grid gap-6">
         {currentDetails.detail.map((detail, index) => (
           <div
