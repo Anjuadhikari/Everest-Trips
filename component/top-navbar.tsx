@@ -9,7 +9,7 @@ import React from "react";
 
 export default function TopNavbar() {
   return (
-    <div className="bg-blue-600 text-white p-4 flex justify-between items-center ">
+    <div className="bg-blue-600 text-white p-0.5 flex justify-between items-center ">
       <div className="flex items-center space-x-8">
         <div className="flex items-center space-x-2">
           <Mail />

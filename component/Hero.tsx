@@ -1,46 +1,38 @@
+"use client";
 import React from "react";
-import image from "@/public/mountain.avif";
+// Use the image path as a string since it's in the public folder
+
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className=" ">
+    <div className="relative">
       <Image
-        src={image}
+        src="/mountain.avif"
         alt="Mountain"
         width={500}
         height={300}
-        className="w-full relative h-[85vh] object-cover"
+        className="w-full h-[85vh] object-cover"
       />
 
-      <div className="absolute bottom-0 mt-50  text-white ">
-        <h1 className="text-6xl font-bold text-center mt-4">
-          Welcome to the Mountains
-        </h1>
-        <p className="text-center text-2xl mt-2">
-          Experience the beauty of nature
-        </p>
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center text-white">
+        <h1 className="text-6xl font-bold">Welcome to the Mountains</h1>
+        <p className="text-2xl mt-2">Experience the beauty of nature</p>
 
-        <div className="flex items-center">
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-full mt-4 ml-70  pointer">
+        <Link href="/faq">
+          <button className="bg-blue-600 text-white px-8 py-4 rounded-full mt-6 hover:bg-blue-700 transition cursor-pointer">
             Get Started
           </button>
-          <div className="flex items-center ml-3 mt-2 gap-2">
-            <p className=" py-1 px-1 rounded-full bg-white ho">
-              <ChevronLeft
-                size={16}
-                className=" text-blue-600 w-8 h-8 mr-2 cursor-pointer "
-              />
-            </p>
-            <p className=" py-1 px-1 rounded-full bg-white">
-              <ChevronRight
-                size={16}
-                className="  text-blue-600 w-8 h-8 ml-2 cursor-pointer"
-              />
-            </p>
+        </Link>
+
+        <div className="flex justify-center mt-6 gap-4">
+          <div className="bg-white rounded-full p-2 cursor-pointer">
+            <ChevronLeft className="text-blue-600 w-6 h-6" />
+          </div>
+          <div className="bg-white rounded-full p-2 cursor-pointer">
+            <ChevronRight className="text-blue-600 w-6 h-6" />
           </div>
         </div>
       </div>

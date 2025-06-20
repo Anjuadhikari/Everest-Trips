@@ -36,7 +36,7 @@ export default function InfoSection() {
 }, []);
 
   return (
-   <div className="bg-white h-[100px] w-[70%] ml-40 border-2 rounded-2xl shadow absolute bottom-[-100px] flex justify-between items-center px-4">
+   <div className="bg-white h-[100px] w-[70%] ml-40 border-2 rounded-2xl shadow absolute bottom-[-50px] flex justify-between items-center px-4">
   <div className="flex justify-around items-center h-full text-gray-500 w-full">
     <div className="flex items-center space-x-3">
           <MapPinHouse />
