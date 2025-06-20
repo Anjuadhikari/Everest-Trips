@@ -36,7 +36,7 @@ export default function InfoSection() {
 }, []);
 
   return (
-   <div className="bg-white h-[100px] w-[70%] ml-40 border-2 rounded-2xl shadow absolute bottom-[-50px] flex justify-between items-center px-4">
+   <div className="bg-white h-[100px] w-8/12 ml-40 border-2  rounded-2xl shadow absolute bottom-10 z-25 flex justify-between items-center px-4">
   <div className="flex justify-around items-center h-full text-gray-500 w-full">
     <div className="flex items-center space-x-3">
           <MapPinHouse />
@@ -47,7 +47,7 @@ export default function InfoSection() {
           />
           <div className="h-5 w-[1.5px] bg-gray-400 "></div>
           <div>
-            {destination ?  (   // boolean check
+            {destination ?  (   
               <div className="absolute bg-white shadow-lg rounded-lg p-4 mt-2 w-48">
                 <ul>
                   <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
