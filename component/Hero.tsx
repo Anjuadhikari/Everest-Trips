@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import ReactDOM from "react-dom";
+import Snowfall from "react-snowfall";
 // Use the image path as a string since it's in the public folder
 
 import Image from "next/image";
@@ -16,6 +18,9 @@ export default function Hero() {
         height={300}
         className="w-full h-[85vh] object-cover"
       />
+      <div>
+        <Snowfall />
+      </div>
 
       <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center text-white">
         <h1 className="text-6xl font-bold">Welcome to the Mountains</h1>
